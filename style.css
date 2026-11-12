@@ -1,0 +1,143 @@
+/* Color palette */
+:root {
+    --dark-navy: #101C2C;
+    --teal: #14B8A6;
+    --white: #FFFFFF;
+    --light-bg: #F4F7FA;
+    --gray: #64748B;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark-navy);
+    line-height: 1.6;
+}
+
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+/* Navbar */
+.navbar {
+    background-color: var(--dark-navy);
+    padding: 1rem 0;
+    color: var(--white);
+}
+.navbar .logo { font-size: 1.5rem; font-weight: 600; }
+
+/* Hero */
+.hero {
+    background-color: var(--teal);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 0;
+}
+.hero h1 { font-size: 2.5rem; margin-bottom: .5rem; }
+.hero p { font-size: 1.2rem; }
+
+/* Card */
+.converter-section .card {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+    margin-top: -2rem; /* overlap hero */
+    padding: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-group { margin-bottom: 1rem; }
+.input-group label { display: block; margin-bottom: .3rem; font-weight: 500; }
+.input-group input {
+    width: 100%;
+    padding: .5rem 1rem;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+.row { display: flex; align-items: flex-end; gap: .5rem; margin-bottom: 1rem; }
+.col { flex: 1; display: flex; flex-direction: column; }
+.col label { margin-bottom: .3rem; font-weight: 500; }
+.col select {
+    padding: .5rem 1rem;
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6" viewBox="0 0 10 6"><path fill="%23808080" d="M0 0l5 6 5-6z"/></svg>') no-repeat right .75rem center;
+    background-color: var(--white);
+    background-size: .6rem;
+}
+
+.swap-col { display: flex; justify-content: center; align-items: center; }
+#swapBtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--dark-navy);
+    transition: transform .2s;
+}
+#swapBtn:hover { transform: rotate(180deg); }
+
+.primary-btn {
+    width: 100%;
+    padding: .7rem;
+    background-color: var(--teal);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .2s;
+}
+.primary-btn:hover { background-color: #0fa795; }
+
+.result, .error, .loading { margin-top: 1rem; text-align: center; }
+.result p { margin: .3rem 0; }
+.error { color: #D32F2F; }
+.hidden { display: none; }
+
+.spinner {
+    border: 4px solid var(--gray);
+    border-top: 4px solid var(--teal);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Sections */
+section { padding: 3rem 0; }
+section h2 { text-align: center; margin-bottom: 2rem; font-size: 1.8rem; color: var(--dark-navy); }
+
+.rates-grid, .currency-grid { display: grid; gap: 1rem; }
+.rates-grid { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.currency-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); list-style: none; }
+.rates-grid div, .currency-grid li {
+    background: var(--white);
+    padding: .8rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.05);
+    text-align: center;
+    font-size: .9rem;
+}
+.currency-grid li { display: flex; align-items: center; gap: .5rem; justify-content: center; }
+.currency-grid img { width: 24px; height: 16px; object-fit: cover; }
+
+footer { background-color: var(--dark-navy); color: var(--white); padding: 1rem 0; text-align: center; font-size: .9rem; }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .converter-section .card { margin-top: -1rem; padding: 1.5rem; }
+}
+

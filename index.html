@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FX Convert - Currency Converter</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/us.svg" type="image/svg+xml" />
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">FX Convert</div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Convert Currencies Instantly</h1>
+            <p>Fast, reliable, and real‑time foreign‑exchange rates.</p>
+        </div>
+    </section>
+
+    <!-- Converter Card -->
+    <section class="converter-section">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="input-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" placeholder="Enter amount" min="0" step="any" />
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="fromCurrency">From</label>
+                            <select id="fromCurrency"></select>
+                        </div>
+                        <div class="col swap-col">
+                            <button id="swapBtn" title="Swap currencies">&#8645;</button>
+                        </div>
+                        <div class="col">
+                            <label for="toCurrency">To</label>
+                            <select id="toCurrency"></select>
+                        </div>
+                    </div>
+                    <button id="convertBtn" class="primary-btn">Convert</button>
+                    <div id="result" class="result hidden">
+                        <p class="converted-amount"></p>
+                        <p class="rate-info"></p>
+                        <p class="updated-time"></p>
+                    </div>
+                    <div id="loading" class="loading hidden">
+                        <div class="spinner"></div>
+                    </div>
+                    <div id="error" class="error hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Rates -->
+    <section class="popular-rates">
+        <div class="container">
+            <h2>Popular Currency Rates (USD Base)</h2>
+            <div id="popularList" class="rates-grid"></div>
+        </div>
+    </section>
+
+    <!-- Supported Currencies -->
+    <section class="supported-currencies">
+        <div class="container">
+            <h2>Supported Currencies</h2>
+            <ul id="currencyList" class="currency-grid"></ul>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+        <div class="container">
+            <h2>About FX Convert</h2>
+            <p>
+                FX Convert provides a simple, secure, and free way to check real‑time foreign exchange rates.
+                All data comes from the free <a href="https://open.er-api.com" target="_blank" rel="noopener">ExchangeRate‑API</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 FX Convert. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
